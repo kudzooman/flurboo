@@ -38,7 +38,9 @@ gem 'spring',        group: :development
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'font-awesome-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

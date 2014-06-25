@@ -1,1 +1,45 @@
-@import "semantic-ui/collections/menu";
+@import "semantic-ui";
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
+@import "font-awesome";
+
+html, body {
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background: #CCCCCC;
+}
+
+a {
+  color: #808080;
+  text-decoration: none;
+}
+
+.welcome {
+  padding: 250px 450px;
+  margin: 50px 50px 50px 50px;
+  background-color: #333333;
+  border-radius: 50;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border: 30px solid;
+  border-color: #FF0000;
+}
+
+.Sign_up {
+  padding: 100px 100px 100px 100px;
+  margin: 40px 280px 20px 280px;
+  background-color: #333333;
+  border-radius: 50;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border: 30px solid;
+  border-color: #FF0000;
+  color: #808080;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+

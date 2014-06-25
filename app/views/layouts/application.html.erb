@@ -8,6 +8,22 @@
 </head>
 <body>
 
+  <div class="cred_btns">
+  <% if current_user %>
+    <div class="ui icon button">
+      <i class="fa fa-times"><%= link_to "", logout_path %></i>
+    </div>
+  <% else %>
+    <div class="ui icon button">
+      <i class="fa fa-check"><%= link_to "", login_path %></i>
+    </div>
+    <div class="ui icon button">
+      <i class="fa fa-pencil"><%= link_to "", signup_path %></i>
+    </div>
+  <% end %>
+  </div>
+
+    
 <%= yield %>
 
 </body>
