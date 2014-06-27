@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
 
+  get 'topics/index'
+
+  get 'topics/new'
+
+  get 'topics/edit'
+
+  get 'topics/show'
+
+  get 'bookmarks/index'
+
+  get 'bookmarks/new'
+
+  get 'bookmarks/edit'
+
+  get 'bookmarks/show'
+
 get 'signup', to: 'users#new', as: 'signup'
 get 'login', to: 'sessions#new', as: 'login'
 get 'logout', to: 'sessions#destroy', as: 'logout'
+get 'home', to: 'welcome#index', as: 'home'
 
 resources :users
 resources :sessions

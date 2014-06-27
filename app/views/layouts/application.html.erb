@@ -9,17 +9,20 @@
 <body>
 
   <div class="cred_btns">
+    <%= link_to home_path, class: "ui icon button" do %>
+      <i class="fa fa-home"></i>
+      <% end %>
   <% if current_user %>
-    <div class="ui icon button">
-      <i class="fa fa-times"><%= link_to "", logout_path %></i>
-    </div>
+    <%= link_to logout_path, class: "ui icon button" do %>
+      <i class="fa fa-times"></i>
+      <% end %>
   <% else %>
-    <div class="ui icon button">
-      <i class="fa fa-check"><%= link_to "", login_path %></i>
-    </div>
-    <div class="ui icon button">
-      <i class="fa fa-pencil"><%= link_to "", signup_path %></i>
-    </div>
+    <%= link_to login_path, class: "ui icon button" do %>
+      <i class="fa fa-check"></i>
+      <% end %>
+    <%= link_to signup_path, class: "ui icon button" do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
   <% end %>
   </div>
 
