@@ -17,18 +17,19 @@ a {
 
 .welcome {
   padding: 150px 250px;
-  margin: 20px 50px 50px 50px;
+  margin: 20px 140px 50px 10px;
   background-color: #333333;
   border-radius: 50;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border: 30px solid;
   border-color: #FF0000;
+  z-index: -1;
 }
 
 .signup {
   padding: 100px 100px 100px 100px;
-  margin: 40px 280px 20px 280px;
+  margin: 40px 280px 20px 100px;
   background-color: #333333;
   border-radius: 50;
   -webkit-border-radius: 50px;
@@ -42,7 +43,7 @@ a {
 
 .login {
   padding: 100px 100px 100px 100px;
-  margin: 40px 280px 20px 280px;
+  margin: 40px 280px 20px 100px;
   background-color: #333333;
   border-radius: 50;
   -webkit-border-radius: 50px;
@@ -57,11 +58,57 @@ a {
 
 .massive.ui.circular.basic.animated.fade.button {
   font-size: 110px;
-  margin: 0px 0px 20px -80px;
+  margin: 0px 0px 20px -120px;
 }
 
+.ui.icon.button:hover {
+  background: #808080;
+  color: black;
+}
+
+
+/* how do I make description text appear when hovering over each icon? */
+/* .ui.icon.button:hover { */
+/*  display: text; */
+/* } */
+
 .cred_btns {
-  margin: 10px 0px 0px 110px
+  margin: pull-left;
+  }
+
+span1 {
+  background: blue;
+  margin: 50px 50px 50px 50px;
+  font-size: 50px;
+}
+
+span2 {
+  background: red;
+  margin: 50px 50px 50px 50px;
+  font-size: 50px;
+}
+
+h1 {
+  text-align: justify;
+  margin: 20px 0px 0px 0px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+.bookmark1 {
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  background: blue;
+}
+
+.bookmark2 {
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  background: red;
 }
 
 

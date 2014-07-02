@@ -42,6 +42,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'font-awesome-rails'
 
+gem 'faker'
+
+gem 'figaro'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

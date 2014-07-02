@@ -1,30 +1,39 @@
 Rails.application.routes.draw do
 
-  get 'topics/index'
+  get 'incoming/Controller'
 
-  get 'topics/new'
-
-  get 'topics/edit'
-
-  get 'topics/show'
-
-  get 'bookmarks/index'
-
-  get 'bookmarks/new'
-
-  get 'bookmarks/edit'
-
-  get 'bookmarks/show'
-
+get 'bookmarks', to: 'bookmarks#index', as: 'bookmarks'
 get 'signup', to: 'users#new', as: 'signup'
 get 'login', to: 'sessions#new', as: 'login'
 get 'logout', to: 'sessions#destroy', as: 'logout'
 get 'home', to: 'welcome#index', as: 'home'
+get 'topics', to: 'topics#index', as: 'topics' 
+
 
 resources :users
 resources :sessions
 
+post :incoming, to: 'incoming#create'
+
 root to: 'welcome#index'
+
+
+#  get 'topics/index'
+
+#  get 'topics/new'
+
+#  get 'topics/edit'
+
+#  get 'topics/show'
+
+#  get 'bookmarks/index'
+
+#  get 'bookmarks/new'
+
+#  get 'bookmarks/edit'
+
+#  get 'bookmarks/show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

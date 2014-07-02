@@ -7,25 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="cred_btns">
+  <ul class="cred_btns">
     <%= link_to home_path, class: "ui icon button" do %>
-      <i class="fa fa-home"></i>
+      <i class="small circular home icon"></i>
+      <% end %>
+    <%= link_to topics_path, class: "ui icon button" do %>
+      <i class="small circular bookmark icon"></i>
       <% end %>
   <% if current_user %>
+    <%= link_to bookmarks_path, class: "ui icon button" do %>
+      <i class="small circular user icon"></i>
+      <% end %>
     <%= link_to logout_path, class: "ui icon button" do %>
-      <i class="fa fa-times"></i>
+      <i class="small circular remove icon"></i>
       <% end %>
   <% else %>
     <%= link_to login_path, class: "ui icon button" do %>
-      <i class="fa fa-check"></i>
+      <i class="small circular sign in icon"></i>
       <% end %>
     <%= link_to signup_path, class: "ui icon button" do %>
-      <i class="fa fa-pencil"></i>
+      <i class="small circular up icon"></i>
     <% end %>
   <% end %>
-  </div>
-
+  </ul>
     
 <%= yield %>
 

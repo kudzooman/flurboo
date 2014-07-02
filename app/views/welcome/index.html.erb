@@ -1,6 +1,16 @@
+
+<% if current_user %>
 <div class="welcome">
   <div class="massive ui circular basic animated fade button">
     <div class="visible content">Welcome!</div>
-    <div class="hidden content"><%= link_to "to flurBoo!", new_user_path %></div>
+    <div class="hidden content"><%= link_to "to flurBoo!", bookmarks_path %></div>
   </div>
 </div>
+<% else %>
+  <div class="welcome">
+  <div class="massive ui circular basic animated fade button">
+    <div class="visible content">Welcome!</div>
+    <div class="hidden content"><%= link_to "to flurBoo!", login_path %></div>
+  </div>
+</div>
+<% end %>
