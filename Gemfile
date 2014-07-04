@@ -46,6 +46,8 @@ gem 'faker'
 
 gem 'figaro'
 
+gem 'mailgunner', '~> 1.3.0'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
