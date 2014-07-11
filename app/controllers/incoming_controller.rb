@@ -16,8 +16,7 @@ class IncomingController < ApplicationController
 
     # if user is nil, create and save user
     if user.nil?
-      user = User.new(email: sender_email)
-      user.skip_confirmation!
+      user = User.new(email: sender_email, password: "helloworld")
       user.save
     end
 

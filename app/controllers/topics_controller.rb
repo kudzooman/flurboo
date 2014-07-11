@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   def index
+    @topics = Topic.all
   end
 
   def new
@@ -9,5 +10,6 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(:id)
   end
 end

@@ -1,2 +1,5 @@
-<h1>#sports</h1>
+<h1><%= @topic.title %></h1>
 
+<% @topic.booksmarks.each do |bookmark| %>
+  <%= link_to bookmark.url, bookmark.url %>
+<% end %>
