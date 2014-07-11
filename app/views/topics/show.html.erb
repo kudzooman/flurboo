@@ -1,5 +1,5 @@
 <h1><%= @topic.title %></h1>
 
-<% @topic.booksmarks.each do |bookmark| %>
+<% @topic.bookmarks.each do |bookmark| %>
   <%= link_to bookmark.url, bookmark.url %>
 <% end %>

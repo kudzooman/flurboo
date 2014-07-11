@@ -2,16 +2,17 @@ Rails.application.routes.draw do
 
   get 'incoming/Controller'
 
-get 'bookmarks', to: 'bookmarks#index', as: 'bookmarks'
 get 'signup', to: 'users#new', as: 'signup'
 get 'login', to: 'sessions#new', as: 'login'
 get 'logout', to: 'sessions#destroy', as: 'logout'
 get 'home', to: 'welcome#index', as: 'home'
-get 'topics', to: 'topics#index', as: 'topics' 
-
 
 resources :users
 resources :sessions
+
+resources :topics do
+  resources :bookmarks
+end
 
 post :incoming, to: 'incoming#create'
 
