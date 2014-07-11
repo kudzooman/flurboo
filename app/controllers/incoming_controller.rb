@@ -3,37 +3,39 @@ class IncomingController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:create]
 
   def create
-    # Take a look at these in your server logs
-    # to get a sense of what you're dealing with.
-    puts "INCOMING PARAMS HERE: #{params}"
 
-    sender = params['sender']
-    subject = params['subject']
-    body_plain = params["body-plain"]
-    user = User.find_by_email(sender)
-    id = user.id
-    email = user.email
+    sender_email = params['sender']
+    subject_text = params['subject']
+    email_body = params["body-plain"]
 
-    if user.bookmarks.count > 0
-      user_bookmarks = user.bookmarks
-      titles = user.bookmarks.map { |bm| bm["title"] }
-
-      if titles.include?(subject)
-        user_bookmarks = user_bookmarks.find_by_title(subject)
-      else
-        new_user_submission = user.bookmarks.create!({ title: subject, url: body_plain })
-      end
-    else
-      new_submission = user.bookmarks.create!({ title: subject, url: body_plain })
-    end
-    # You put the message-splitting and business
-    # magic here. 
     # using the sender to find the user
-        # use the subject to find the topic
+    user = User.find_by_email(sender_email)
+
+    # use the subject to find the topic
+    topic = Topic.find_by_title(subject_text)
+
     # if user is nil, create and save user
+    if user.nil?
+      user = User.new(email: sender_email)
+      user.skip_confirmation!
+      user.save
+    end
+
     # if topic is nil, create and save topic
+    if topic.nil?
+      topic = Topic.new(title: subject_text)
+      topic.save
+    end
+
     # use the body-plain to create the bookmark
     # assign bookmark to topic and user and save
+    bookmark = Bookmark.where(url: email_body, user: user, topic: topic).first  
+
+    if bookmark.nil?
+      bookmark = Bookmark.new(url: email_body, user: user, topic: topic)
+      bookmark.save
+    end
+
 
     # Assuming all went well. 
     head 200
