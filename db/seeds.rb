@@ -13,16 +13,18 @@ users = User.all
 
 # Create Topics
 15.times do 
-  Topic.create(
+   topic = Topic.create(
     title:          Faker::Lorem.word
     )
+  5.times do
+    bookmark = Bookmark.create(
+      url:  Faker::Internet.url,
+      topic: topic
+    )
+  end
 end
-topics = Topic.all
 
-# Create Bookmarks
-50.times do
-  bookmark = Bookmark.create(
-    url:  Faker::Internet.domain_name 
-  )
-end
-bookmarks = Bookmark.all
+# topics = Topic.all
+
+# # Create Bookmarks
+# bookmarks = Bookmark.all
